@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+<!-- {% block style%}{% endblock%} -->
+
+{% block content %}
+<body>
+    <form id="survForm" action="">
+
+    <h1>Watermelon Markets - Seller Survey</h1>
+    
+    <!-- One "tab" for each step in the form: -->
+    <!-- Store name intake -->
+    <div class="tab">What is the name of your store?:
+        <p>Example: Razer Gold, Amazon, 
+            Target. (If you have multiple stores, choose your top gift card -- you can always add more later.)</p>
+      <p><input placeholder="Example: Razer Gold" oninput="this.className = ''"></p>
+    </div>
+    
+    <!-- One "tab" for each step in the form: -->
+    <!-- Balance intake -->
+    <div class="tab">Balance:
+      <p>What is the balance left on your gift card? If possible, please double check your balance before entering the number here. Example answer: $100, 2,000 INR, 200 EUR. </p>
+      <p><input placeholder="example: $100, 2,000 INR," oninput="this.className = ''"></p>
+      </div>
+    
+    <!-- One "tab" for each step in the form: -->
+    <div class="tab">What price are you selling at?:
+      <p>Example Answer: $70. Please remember a low prices generally results in a faster and more successful sale, and we recommend a substantial discount. This number must be strictly at least ten percent less than the face value of the card, as we only sell discounted gift cards.</p>
+      <p><input placeholder="Example: $70." oninput="this.className = ''"></p>
+      </div>
+    
+    <!-- One "tab" for each step in the form: -->
+    <div class="tab">Which network would you like to receive funds at?:
+      <p>If you are unsure, please select Polygon. (You may change this later.)</p>
+      <p><input  oninput="this.className = ''"></p>
+    </div>
+    
+  
+    <!-- One "tab" for each step in the form: -->
+    <div class="tab">What Polygon or Ethereum address would you like to receive funds at?:
+    <p>You may change this later. Example: 0xfA63Ca5caF1D88f42e1A73aE0E0cb7060B9E7292</p>
+    <p><input  oninput="this.className = ''"></p>
+    </div>
+    
+    <!-- One "tab" for each step in the form: -->
+    <div class="tab">Would you prefer to provide a deposit or the card information for validation?:
+    <p>In order to verify your listing, we require either a 10% deposit of the card value in crypto, or full gift card information for verification.</p>
+    <p><input  oninput="this.className = ''"></p>
+    </div>
+    
+    <!-- One "tab" for each step in the form: -->
+    <div class="tab">What is the gift card number?:
+    <p>This number is stored securely, and will not be used until you sell your card.</p>
+    <p><input  oninput="this.className = ''"></p>
+    </div>
+    
+    <!-- One "tab" for each step in the form: -->
+    <div class="tab">What is the gift card's PIN or expiration date?:
+    <!-- Use select here to indicate if input is pin or date -->
+    <p><input  oninput="this.className = ''"></p>
+    </div>
+
+    <!-- One "tab" for each step in the form: -->
+    <div class="tab">Almost done! What is your email address?:
+    <!-- Use select here to indicate if input is pin or date -->
+    <p><input  oninput="this.className = ''"></p>
+    </div>
+    
+    <!-- One "tab" for each step in the form: -->
+    <div style="overflow:auto;">
+    <div style="float:right;">
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+    </div>
+      
+    
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+    
+    </form> 
+    <script src="{{ url_for('static', filename='form_control.js') }}" charset="utf-8"></script>
+</body>
+{% endblock %}
