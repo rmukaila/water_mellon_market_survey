@@ -4,14 +4,22 @@ showTab(currentTab); // Display the current tab
 function showTab(n) {
   // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("tab");
-  x[n].style.display = "block";
+  var isDeposit = document.getElementById("id_carddeposit_select").value=="Deposit"
+  var email_tab = document.getElementById("id_email_div")
+  if (isDeposit && n==6){
+    email_tab.style.display = "block";
+  }else{
+  email_tab.style.display = "none";
+  x[n].style.display = "block";}
+  console.log(x)
   // ... and fix the Previous/Next buttons:
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (n == (x.length - 1)) {
+  
+  if (n == (x.length - 1) || email_tab.style.display=="block" ) {
     document.getElementById("nextBtn").innerHTML = "Submit";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
@@ -23,18 +31,29 @@ function showTab(n) {
 function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
+  
+  var email_tab = document.getElementById("id_email_div");
+
   // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
+//   if (n == 1 && !validateForm()) return false; //We pause the validation for now
   // Hide the current tab:
   x[currentTab].style.display = "none";
+
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-  // if you have reached the end of the form... :
+
+  // if you have reached the end of the form then activate form submission :
   if (currentTab >= x.length) {
-    //...the form gets submitted:
     document.getElementById("survForm").submit();
     return false;
-  }
+
+   //If you are on email tab and button clicked is "Previous" then activate form submission
+   //Note: By default previous, next and submit buttons can submit form if submission is activated.
+   //So we needed to use the -/+ increamentation to tell between previous/submit button clicks
+  }else if(n>0 && email_tab.style.display=="block") {
+    document.getElementById("survForm").submit();
+return false}
+
   // Otherwise, display the correct tab:
   showTab(currentTab);
 }
@@ -68,5 +87,6 @@ function fixStepIndicator(n) {
     x[i].className = x[i].className.replace(" active", "");
   }
   //... and adds the "active" class to the current step:
+//   console.log(x[n])
   x[n].className += " active";
 }
