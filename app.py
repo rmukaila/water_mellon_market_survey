@@ -13,6 +13,8 @@ def hello_world():
 def take_survey():    
     return render_template("seller_intake_survey.html")
 
+
+
 #endpoint for saving survey results
 @app.route("/process_survey_intake", methods=["POST"])
 def save_survey():
@@ -22,21 +24,20 @@ def save_survey():
         #For debugging
         # print(get_survey_results())
         return render_template("thank_you.html")
+    
 
 #End-point for displaying survey results
 @app.route("/seller_intake_survey_results", methods=["GET"])
 def retrieve_survey_results():
     #code to fetch the survey results from the sqllite db
-    # results =''
-    # try:
-    #     results = get_survey_results()
-    #     # print(results)
-    # except:
-        #Log here
+    results =''
+    try:
+        results = get_survey_results()
+        # print(results)
+    except:
+        # Log here
         # print("Error fetching data, perhaps no rows exist in db")
-        # pass
-    results = get_survey_results()
-
-  
+        pass
+      
     return render_template("seller_survey_results.html", data=results)
 
