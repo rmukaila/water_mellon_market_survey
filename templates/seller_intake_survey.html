@@ -108,7 +108,7 @@
     <!-- One "tab" for each step in the form: -->
     <div class="tab" id="id_network_div">Which network would you like to receive funds at?:
       <p>If you are unsure, please select Polygon. (You may change this later.)</p>
-      <p><select id="id_network"  name="network" oninput="this.className = ''">
+      <p><select class="standalone_drop-downs" id="id_network"  name="network" oninput="this.className = ''">
         <option value="Polygon">Polygon</option>
         <option value="Ethereum">Ethereum</option>
     </select></p>
@@ -124,7 +124,7 @@
     <!-- One "tab" for each step in the form: -->
     <div class="tab" id="id_depositcard_div">Would you prefer to provide a deposit or the card information for validation?:
     <p>In order to verify your listing, we require either a 10% deposit of the card value in crypto, or full gift card information for verification.</p>
-    <p><select id="id_carddeposit_select"  name="card_deposit" oninput="this.className = ''">
+    <p><select class="standalone_drop-downs" id="id_carddeposit_select"  name="card_deposit" oninput="this.className = ''" required>
         <option value="">Select "Deposit" or "Card"</option>
         <option value="Deposit">Deposit</option>
         <option value="Card">Card</option>
@@ -151,8 +151,8 @@
     
     <!-- One "tab" for each step in the form: -->
     <div style="overflow:auto;">
-    <div style="float:right;">
-        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+    <div style="float:right; margin-top: 30px;">
+        <button  type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
         <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
     </div>
     </div>
@@ -160,15 +160,11 @@
     
     <!-- Circles which indicates the steps of the form: -->
     <div style="text-align:center;margin-top:40px;">
+      <!-- Create 9 indicators for each step in the survey flow -->
+      {% for i in range(9) %}
       <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
+       {% endfor %}
+
     </div>
     
     </form> 

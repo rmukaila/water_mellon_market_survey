@@ -3,6 +3,16 @@
 
  }
  
+ #container-thanks{
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10%;
+    padding: 40px;
+    text-align: center;
+    /* width: 40%; */
+    min-width: 300px;
+ }
+
  /* Style the form */
  #survForm {
     background-color: #ffffff;
@@ -52,3 +62,16 @@
   .step.finish {
     background-color: #04AA6D;
   } 
+
+  /* prev and Next buttons */
+  #prevBtn{width: 90px;
+      height: 40px;}
+
+  #nextBtn{width: 90px;
+      height: 40px;}
+
+  /* Dropdowns */
+  .standalone_drop-downs{
+    width: 200px;
+    height: 30px;
+  }

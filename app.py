@@ -37,35 +37,6 @@ def retrieve_survey_results():
         # pass
     results = get_survey_results()
 
-    #Lets create a mock data
-    data = [{
-    'survey_id': 'something',
-    'store_name': 'None',
-    'balance': 'None',
-    'balance_currency': 'None',
-    'selling_price': 'None',
-    'selling_price_currency': 'None',
-    'network': 'None',
-    'crypto_address': 'None',
-    'card_deposit': 'None',
-    'card_number': 'None',
-    'card_pin': 'None',
-    'email_address': 'None'
-                    },
-      {
-    'survey_id': 'something',
-    'store_name': 'None',
-    'balance': 'None',
-    'balance_currency': 'None',
-    'selling_price': 'None',
-    'selling_price_currency': 'None',
-    'network': 'None',
-    'crypto_address': 'None',
-    'card_deposit': 'None',
-    'card_number': 'None',
-    'card_pin': 'None',
-    'email_address': 'None'
-        }]
-    print(results)
+  
     return render_template("seller_survey_results.html", data=results)
 
