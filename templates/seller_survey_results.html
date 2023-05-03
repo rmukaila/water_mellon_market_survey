@@ -24,24 +24,39 @@
             </thead>
             <tbody>
                 {% for row in data %}
-                <tr>                
-                <td>{{row.survey_id}}</td>
-                <td>{{row.store_name}}</td>
-                <td>{{row.balance}}</td>
-                <td>{{row.balance_currency}}</td>
-                <td>{{row.selling_price}}</td>
-                <td>{{row.selling_price_currency}}</td>
-                <td>{{row.network}}</td>
-                <td>{{row.crypto_address}}</td>
-                <td>{{row.card_deposit}}</td>
-                <td>{{row.card_number}}</td>
-                <td>{{row.card_pin}}</td>
-                <td>{{row.email_address}}</td>                
-                </tr>
+                <tr>  
+                  {% for item in row %}  
+                  <td>{{item}}</td>
+                  {% endfor %}            
+                  <!-- <td>{{row.survey_id}}</td>
+                  <td>{{row.store_name}}</td>
+                  <td>{{row.balance}}</td>
+                  <td>{{row.balance_currency}}</td>
+                  <td>{{row.selling_price}}</td>
+                  <td>{{row.selling_price_currency}}</td>
+                  <td>{{row.network}}</td>
+                  <td>{{row.crypto_address}}</td>
+                  <td>{{row.card_deposit}}</td>
+                  <td>{{row.card_number}}</td>
+                  <td>{{row.card_pin}}</td>
+                  <td>{{row.email_address}}</td>                
+                  </tr> -->
                 {% endfor %}
             </tbody>
           </table>
-          
-    </body>
+
+<!-- Scripts for datatables - table pagination,searching, etc -->
+
+<script src="{{ url_for('static', filename='datatables-1.13.4.js') }}" charset="utf-8"></script> 
+<script type="text/javascript" src="{{ url_for('static', filename='jquery-1.12.3.js') }}" charset="utf-8"></script> 
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script>
+  $(document).ready( function () {
+      
+      let table = new DataTable('#id_survey_table');
+  } );
+</script>        
+
+  
 
 {% endblock %}

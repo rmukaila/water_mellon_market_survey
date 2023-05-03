@@ -25,15 +25,17 @@ def save_survey():
 
 #End-point for displaying survey results
 @app.route("/seller_intake_survey_results", methods=["GET"])
-def get_survey_results():
+def retrieve_survey_results():
     #code to fetch the survey results from the sqllite db
-    results =''
+    # results =''
     # try:
     #     results = get_survey_results()
-    #     print(results)
+    #     # print(results)
     # except:
-    #     #Log here
-    #     print("Error fetching data, perhaps no rows exist in db")
+        #Log here
+        # print("Error fetching data, perhaps no rows exist in db")
+        # pass
+    results = get_survey_results()
 
     #Lets create a mock data
     data = [{
@@ -49,8 +51,8 @@ def get_survey_results():
     'card_number': 'None',
     'card_pin': 'None',
     'email_address': 'None'
-},
-{
+                    },
+      {
     'survey_id': 'something',
     'store_name': 'None',
     'balance': 'None',
@@ -63,7 +65,7 @@ def get_survey_results():
     'card_number': 'None',
     'card_pin': 'None',
     'email_address': 'None'
-}]
-
-    return render_template("seller_survey_results.html", data=data)
+        }]
+    print(results)
+    return render_template("seller_survey_results.html", data=results)
 

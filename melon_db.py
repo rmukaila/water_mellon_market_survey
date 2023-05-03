@@ -1,5 +1,6 @@
 import sqlite3
 import random
+import os
 
 #code to initialize database
 def db_init():
@@ -26,7 +27,9 @@ def insert_form_data(form_data):
     
     my_cursor = my_connection.cursor()
     #insert data 
-    initial_insert_statement = "INSERT INTO survey VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"
+    initial_insert_statement = """INSERT INTO survey(survey_id, store_name, balance, balance_currency,
+      selling_price, selling_price_currency, network, crypto_address, card_deposit, card_number,
+        card_pin, email_address) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"""
 
     #Generate a random number touse as survey unique survey id
     rand_num = random.randint(1000, 10000)
@@ -53,12 +56,21 @@ def insert_form_data(form_data):
 
 def get_survey_results():
     #fetching results
-    my_connection = sqlite3.connect('seller_survey.db')
-    my_cursor = my_connection.cursor()
-    my_cursor.execute("SELECT * FROM survey")
-    results = [row for row in my_cursor.fetchall()]
-    my_connection.close()
+    # current_dir = os.path.dirname(os.path.abspath(__file__))
+    results = ''
+    try:
+        my_connection = sqlite3.connect('seller_survey.db')
+        my_cursor = my_connection.cursor()
+        my_cursor.execute("SELECT * FROM survey")
+        rows = my_cursor.fetchall()
+        # results = [row for row in rows]
+        my_connection.close()
+    except:
+        #Put logging code here
+        pass
 
-    return results
+        
+
+    return rows
 
 # survey_id, store_name, balance, balance_currency, selling_price, selling_price_currency, network, crypto_address, card_deposit, card_number, card_pin, email_address
