@@ -1,9 +1,14 @@
+ /* Main container style */
+ .container-intake{
+
+ }
+ 
  /* Style the form */
- #regForm {
+ #survForm {
     background-color: #ffffff;
     margin: 100px auto;
     padding: 40px;
-    width: 70%;
+    width: 40%;
     min-width: 300px;
   }
   
