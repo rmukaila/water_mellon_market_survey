@@ -30,7 +30,8 @@ def insert_form_data(form_data):
     initial_insert_statement = """INSERT INTO survey(survey_id, store_name, balance, balance_currency,
       selling_price, selling_price_currency, network, crypto_address, card_deposit, card_number,
         card_pin, email_address) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"""
-
+    
+    
     #Generate a random number to use as a unique survey id
     rand_num = random.randint(1000, 10000)
     mylist = []
@@ -69,9 +70,7 @@ def get_survey_results():
         my_connection.close()
     except:
         #Put logging code here and raise an exception after logging
-        pass
-
-        
+        pass   
 
     return rows
 
