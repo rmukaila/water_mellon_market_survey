@@ -31,7 +31,7 @@ def insert_form_data(form_data):
       selling_price, selling_price_currency, network, crypto_address, card_deposit, card_number,
         card_pin, email_address) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"""
 
-    #Generate a random number touse as survey unique survey id
+    #Generate a random number to use as a unique survey id
     rand_num = random.randint(1000, 10000)
     mylist = []
     mylist.append(rand_num)
@@ -47,17 +47,19 @@ def insert_form_data(form_data):
     mylist.append(form_data['card_pin'])
     mylist.append(form_data['email_address'])
     
-    print(mylist)
 
     # initial_insert_statement = initial_insert_statement+str(tuple(mylist))
-    my_cursor.execute(initial_insert_statement,tuple(mylist))
-    my_connection.commit()
-    my_connection.close()
+    try:
+        my_cursor.execute(initial_insert_statement,tuple(mylist))
+        my_connection.commit()
+        my_connection.close()
+    except:
+        #Put logging code here and raise an exception afterwards
+        pass
 
 def get_survey_results():
     #fetching results
-    # current_dir = os.path.dirname(os.path.abspath(__file__))
-    results = ''
+    
     try:
         my_connection = sqlite3.connect('seller_survey.db')
         my_cursor = my_connection.cursor()
@@ -66,7 +68,7 @@ def get_survey_results():
         # results = [row for row in rows]
         my_connection.close()
     except:
-        #Put logging code here
+        #Put logging code here and raise an exception after logging
         pass
 
         

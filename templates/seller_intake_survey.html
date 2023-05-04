@@ -17,14 +17,14 @@
     <div class="tab" id="id_name_div">What is the name of your store?:
         <p>Example: Razer Gold, Amazon, 
             Target. (If you have multiple stores, choose your top gift card -- you can always add more later.)</p>
-      <p><input name="store_name" placeholder="Example: Razer Gold" value="None" oninput="this.className = ''"></p>
+      <p><input name="store_name" placeholder="Example: Razer Gold" value="" oninput="this.className = ''"></p>
     </div>
     
     <!-- One "tab" for each step in the form: -->
     <!-- Balance intake -->
     <div class="tab" id="id_balance_div">Balance:
       <p>What is the balance left on your gift card? If possible, please double check your balance before entering the number here. Example answer: $100, 2,000 INR, 200 EUR. </p>
-      <p><input type="number" name="balance" value="None" min="0" max="" step="1" value="0" placeholder="example: $100, 2,000 INR," oninput="this.className = ''">
+      <p><input type="number" name="balance" value="" min="0" max="" step="1" value="0" placeholder="example: $100, 2,000 INR," oninput="this.className = ''">
         <select name="balance_currency" id="currency">
         <option value="USD">US Dollar</option>
         <option value="EUR">Euro</option>
@@ -119,35 +119,36 @@
     <!-- One "tab" for each step in the form: -->
     <div class="tab" id="id_crypto_address_div">What Polygon or Ethereum address would you like to receive funds at?:
     <p>You may change this later. Example: 0xfA63Ca5caF1D88f42e1A73aE0E0cb7060B9E7292</p>
-    <p><input name="crypto_address" value="None" oninput="this.className = ''"></p>
+    <p><input name="crypto_address" placeholder="example: 0xfA63Ca5caF1D88f42e1A73aE0E0cb7060B9E7292" value="" oninput="this.className = ''"></p>
     </div>
     
     <!-- One "tab" for each step in the form: -->
     <div class="tab" id="id_depositcard_div">Would you prefer to provide a deposit or the card information for validation?:
     <p>In order to verify your listing, we require either a 10% deposit of the card value in crypto, or full gift card information for verification.</p>
     <p><select class="standalone_drop-downs" id="id_carddeposit_select"  name="card_deposit" oninput="this.className = ''" required>
-        <option value="">Select "Deposit" or "Card"</option>
-        <option value="Deposit">Deposit</option>
+        <!-- <option value="">Select "Deposit" or "Card"</option> -->
         <option value="Card">Card</option>
+        <option value="Deposit">Deposit</option>
+        
     </select></p>
     </div>
     
     <!-- One "tab" for each step in the form: -->
     <div class="tab" id="id_card_number_div">What is the gift card number?:
     <p>This number is stored securely, and will not be used until you sell your card.</p>
-    <p><input  name="card_number" value="None" oninput="this.className = ''"></p>
+    <p><input  name="card_number" value="" oninput="this.className = ''"></p>
     </div>
     
     <!-- One "tab" for each step in the form: -->
     <div class="tab" id="id_card_pin_div">What is the gift card's PIN or expiration date?:
     <!-- Use select here to indicate if input is pin or date -->
-    <p><input name="card_pin" value="None" oninput="this.className = ''"></p>
+    <p><input name="card_pin" placeholder="Please enter only PIN or date" value="" oninput="this.className = ''"></p>
     </div>
 
     <!-- One "tab" for each step in the form: -->
     <div class="tab" id="id_email_div">Almost done! What is your email address?:
     <!-- Use select here to indicate if input is pin or date -->
-    <p><input name="email_address" value="Name"  oninput="this.className = ''"></p>
+    <p><input name="email_address" placeholder="you@gmail.com" value=""  oninput="this.className = ''"></p>
     </div>
     
     <!-- One "tab" for each step in the form: -->

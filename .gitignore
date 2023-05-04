@@ -1,4 +1,6 @@
 
 #The developement environment
 /env_melon
+
+#Database
 /*.db
