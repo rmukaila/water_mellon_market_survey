@@ -59,3 +59,35 @@ This is a microproject developed in flask to receive and display watermelonmarke
 
 
 # How to run app with docker
+
+### Prerequisits for running with docker
+### Make sure docker desktop is installed
+
+- Clone the repository with either https link (depends on your git configuration):
+
+    #shell command:
+
+        git clone https://github.com/rmukaila/water_mellon_market_survey_flask.git
+
+    OR with ssh link (depends on your git configuration):
+
+        git clone git@github.com:rmukaila/water_mellon_market_survey_flask.git
+       
+
+- cd into the repository folder, create the environment for the project
+#shell commands:
+
+        1) cd water_mellon_market_survey_flask
+        2) docker image build -t watermelonapp .
+        3) docker run -p 5000:5000 -d watermelonapp
+
+        
+        ##NOTE: Do not omit the dot "." at the end of command 2 above.
+
+- That's it!
+    to to see the survey form, visit this link in your browser
+    http://127.0.0.1:5000/seller_intake_survey
+
+    To see the survey results page visit:
+    
+    http://127.0.0.1:5000/seller_intake_survey_results

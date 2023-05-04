@@ -93,12 +93,12 @@ function fixStepIndicator(n,isDeposit) {
   var email_tab = document.getElementById("id_email_div")
   var total_steps = x.length
 
-  // //if Deposit is selected instead of Card, hide last two step indicators
+  //if Deposit is selected instead of Card, hide last two step indicators
   // if (isDeposit ){
     
   //   // console.log(x[total_steps-1])
-  //   x[total_steps-1].style.display="none"
-  //   x[total_steps-2].style.display="none"  
+  //   x[total_steps-1].style.background-color="white" 
+  //   x[total_steps-2].style.background-color="white"   
   // }
   // else if (!isDeposit){
   //   x[total_steps-1].style.display="block"
