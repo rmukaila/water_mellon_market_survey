@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from .melon_db import insert_form_data, get_survey_results, db_init
+from melon_db import insert_form_data, get_survey_results, db_init
 
 app = Flask(__name__)
 db_init()
