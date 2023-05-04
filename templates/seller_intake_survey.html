@@ -24,7 +24,7 @@
     <!-- Balance intake -->
     <div class="tab" id="id_balance_div">Balance:
       <p>What is the balance left on your gift card? If possible, please double check your balance before entering the number here. Example answer: $100, 2,000 INR, 200 EUR. </p>
-      <p><input type="number" name="balance" value="" min="0" max="" step="1" value="0" placeholder="example: $100, 2,000 INR," oninput="this.className = ''">
+      <p><input type="number" name="balance" value="" min="0" max="" step="1" value="0" placeholder="example: $100, 2,000 INR," oninput="this.className = ''" required>
         <select name="balance_currency" id="currency">
         <option value="USD">US Dollar</option>
         <option value="EUR">Euro</option>
@@ -125,9 +125,9 @@
     <!-- One "tab" for each step in the form: -->
     <div class="tab" id="id_depositcard_div">Would you prefer to provide a deposit or the card information for validation?:
     <p>In order to verify your listing, we require either a 10% deposit of the card value in crypto, or full gift card information for verification.</p>
-    <p><select class="standalone_drop-downs" id="id_carddeposit_select"  name="card_deposit" oninput="this.className = ''" required>
+    <p><select class="standalone_drop-downs" id="id_carddeposit_select"  name="validate_deposit" oninput="this.className = ''" required>
         <!-- <option value="">Select "Deposit" or "Card"</option> -->
-        <option value="Card">Card</option>
+        <option value="Validate">Validate</option>
         <option value="Deposit">Deposit</option>
         
     </select></p>

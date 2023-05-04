@@ -10,5 +10,16 @@
     <h1>Your survey inputs have been sucessfully submited! </h1>
     <h3>Thank you! </h3>
 </div>
+
+<script>
+   window.onbeforeunload = function() { 
+    window.setTimeout(function () { 
+        window.location = '/seller_intake_survey';
+    }, 0); 
+    window.onbeforeunload = null; // necessary to prevent infinite loop, that kills your browser 
+}
+
+
+</script>
 </body>
 {% endblock %}

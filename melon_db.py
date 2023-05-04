@@ -15,7 +15,7 @@ def db_init():
     create_statement = """CREATE TABLE IF NOT EXISTS 
     survey(survey_id INTEGER PRIMARY KEY, store_name TEXT, balance TEXT,
     balance_currency TEXT, selling_price REAL, selling_price_currency TEXT,
-    network TEXT, crypto_address TEXT, card_deposit TEXT, card_number TEXT,
+    network TEXT, crypto_address TEXT, validate_deposit TEXT, card_number TEXT,
     card_pin TEXT, email_address TEXT)"""
 
     my_cursor.execute(create_statement)
@@ -28,7 +28,7 @@ def insert_form_data(form_data):
     my_cursor = my_connection.cursor()
     #insert data 
     initial_insert_statement = """INSERT INTO survey(survey_id, store_name, balance, balance_currency,
-      selling_price, selling_price_currency, network, crypto_address, card_deposit, card_number,
+      selling_price, selling_price_currency, network, crypto_address, validate_deposit, card_number,
         card_pin, email_address) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"""
     
     
@@ -43,7 +43,7 @@ def insert_form_data(form_data):
     mylist.append(form_data['selling_price_currency'])
     mylist.append(form_data['network'])
     mylist.append(form_data['crypto_address'])
-    mylist.append(form_data['card_deposit'])
+    mylist.append(form_data['validate_deposit'])
     mylist.append(form_data['card_number'])
     mylist.append(form_data['card_pin'])
     mylist.append(form_data['email_address'])
@@ -74,4 +74,4 @@ def get_survey_results():
 
     return rows
 
-# survey_id, store_name, balance, balance_currency, selling_price, selling_price_currency, network, crypto_address, card_deposit, card_number, card_pin, email_address
+# survey_id, store_name, balance, balance_currency, selling_price, selling_price_currency, network, crypto_address, validate_deposit, card_number, card_pin, email_address
